@@ -59,8 +59,8 @@ public class TestCaesarCipher {
         if(maxDex < genMostOccuredLetter) {
             dKey = 26 - (genMostOccuredLetter - maxDex);
         }
-        CaesarCipher cc = new CaesarCipher(26-dKey);
-        return cc.encrypt(encrypted);
+        CaesarCipher cc = new CaesarCipher(dKey);
+        return cc.decrypt(encrypted);
     }
     
     /**

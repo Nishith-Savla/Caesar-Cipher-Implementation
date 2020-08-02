@@ -67,8 +67,6 @@ public class TestCaesarCipherTwo {
         String stringKey2 = halfOfString(encrypted, 1);
         int dKey2 = getKey(stringKey2);
         CaesarCipherTwo cc2 = new CaesarCipherTwo(dKey1, dKey2);
-        stringKey1 = cc2.decryptTwoKeys(stringKey1);
-        stringKey2 = cc2.decryptTwoKeys(stringKey2);
         StringBuilder decryptedString = new StringBuilder();
         for(int i = 0, s1Counter = 0, s2Counter = 0; i < encrypted.length(); i++) {
             if(i%2==0) {
@@ -79,6 +77,6 @@ public class TestCaesarCipherTwo {
                 s2Counter++;
             }
         }
-        return decryptedString.toString();
+        return cc2.decryptTwoKeys(decryptedString.toString());
     }
 }
